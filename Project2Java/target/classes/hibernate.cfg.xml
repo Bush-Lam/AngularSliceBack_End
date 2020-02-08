@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://mountaineerdb.ckao52ivleod.us-east-2.rds.amazonaws.com:3306/restaurantdb</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.connection.username">bushlam28</property>
+        <property name="hibernate.connection.password">password6389148</property>
+     <!--   <property name="hibernate.hbm2ddl.auto">create</property>-->
+        <property name="hibernate.show_sql">true</property>
+       <mapping class = "dev.anthony.entities.Account"/>
+        <mapping class = "dev.anthony.entities.Bill"></mapping>
+        <mapping class = "dev.anthony.entities.Food"></mapping>
+         <mapping class = "dev.anthony.entities.BillFoodItem"></mapping>
+       
+     
+    </session-factory>
+</hibernate-configuration>
