@@ -20,7 +20,7 @@ public class BillDAOtest {
 	public void CreatBilltest() {
 		Set<BillFoodItem> setbill = new HashSet<BillFoodItem>(); 
 		
-		Bill b= new Bill(3,acctdaohib2.getAccountById(1),12,"2020-02-07",setbill);
+		Bill b= new Bill(0,acctdaohib2.getAccountById(3),12,"2020-02-07",setbill);
 		acctdaohib.createBill(b);
 		
 		 System.out.println(b);

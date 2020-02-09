@@ -22,6 +22,9 @@ public class BillFoodItemDAOtest {
 	public static BillFoodItemDao acctdaohib= new BillFoodItemDAOHibernate();
 	public static BillDAO bil= new BillDAOHibernate();
 	public static FoodDAO food= new FoodDAOHibernate();
+	
+	
+	
 	@Test
 	public void getAcctByBillIdtest() {
 		

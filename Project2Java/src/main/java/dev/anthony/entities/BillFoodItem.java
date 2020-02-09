@@ -14,7 +14,6 @@ import javax.persistence.Table;
 @Table(name ="Bill_Fooditem")
 public class BillFoodItem {
 	
-	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="amount")

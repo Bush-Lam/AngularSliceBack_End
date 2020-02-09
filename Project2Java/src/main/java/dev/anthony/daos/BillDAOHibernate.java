@@ -14,6 +14,7 @@ public class BillDAOHibernate implements BillDAO {
 		
 		Session sess = sf.openSession();
 		sess.beginTransaction();
+		sess.save(bill);
 		sess.getTransaction().commit();
 		sess.close();
 		return bill;
