@@ -18,7 +18,7 @@ public static AccountDAO acctdaohib= new AccountDAOHibernate();
 	public void CreatAccttest() {
 		 Set<Bill> setbill = new HashSet<Bill>(); 
 		 Account acct = new Account(1,"61Bo","password","tpo@gmail.com","Yoe","Boe",1,setbill);
-		Account acctt = acctdaohib.CreatAccount(acct);
+		Account acctt = acctdaohib.CreateAccount(acct);
 		
 		 System.out.println(acctt);
 		
@@ -55,7 +55,7 @@ public static AccountDAO acctdaohib= new AccountDAOHibernate();
 	public void deleteAccttest() {
 		 int id =7;
 		 Account acctt = acctdaohib.getAccountById(id);
-		 acctdaohib.ddeleteAccount(acctt);
+		 acctdaohib.deleteAccount(acctt);
 		
 		 System.out.println(acctt);
 	

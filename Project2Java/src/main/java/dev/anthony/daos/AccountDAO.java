@@ -1,21 +1,24 @@
 package dev.anthony.daos;
 
+import java.util.List;
+
 import dev.anthony.entities.Account;
 
 public interface AccountDAO {
 	
 	// create
-	Account CreatAccount(Account account);
+	Account CreateAccount(Account account);
 	
 	// read
 	Account getAccountById(int id);
 	Account getAccountByPassword(String password);
+	List<Account> getAllAccounts();
 	
 	// update
 	Account updateAccount(Account account);
 	
 	// delete
-	boolean ddeleteAccount(Account account);
+	boolean deleteAccount(Account account);
 	
 
 }

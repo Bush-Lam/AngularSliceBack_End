@@ -14,14 +14,15 @@ import dev.anthony.entities.BillFoodItem;
 
 public class BillDAOtest {
 
-	public static BillDAO acctdaohib= new BillDAOHibernate();
+	public static BillDAO billdaohib = new BillDAOHibernate();
 	public static AccountDAO acctdaohib2= new AccountDAOHibernate();
+	
 	@Test
 	public void CreatBilltest() {
 		Set<BillFoodItem> setbill = new HashSet<BillFoodItem>(); 
 		
 		Bill b= new Bill(0,acctdaohib2.getAccountById(3),12,"2020-02-07",setbill);
-		acctdaohib.createBill(b);
+		billdaohib.createBill(b);
 		
 		 System.out.println(b);
 		
@@ -30,7 +31,7 @@ public class BillDAOtest {
 	public void getBillByIdtest() {
 		  
 		 int id =2;
-		Bill b = acctdaohib.getBillById(id);
+		Bill b = billdaohib.getBillById(id);
 		
 		 System.out.println("Testing getbillById "+ b);
 
@@ -42,7 +43,7 @@ public class BillDAOtest {
    Set<BillFoodItem> setbill = new HashSet<BillFoodItem>(); 
 		
 		Bill b= new Bill(2,acctdaohib2.getAccountById(1),50,"2020-02-05 00:00:00",setbill);
-		acctdaohib.createBill(b);
+		billdaohib.createBill(b);
 		
 		 System.out.println(b);
 	

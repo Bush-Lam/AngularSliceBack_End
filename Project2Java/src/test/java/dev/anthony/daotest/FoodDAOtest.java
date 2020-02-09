@@ -16,13 +16,13 @@ import dev.anthony.entities.Food;
 
 public class FoodDAOtest {
 
-public static FoodDAO acctdaohib= new FoodDAOHibernate();
+public static FoodDAO fooddathib = new FoodDAOHibernate();
 	
 	@Test
 	public void CreatFoodtest() {
 		 Set<BillFoodItem> setbill = new HashSet<BillFoodItem>(); 
 		 Food fd = new Food(1,"Peperoni Piza",12,300,setbill);
-		acctdaohib.CreatAccount(fd);
+		 fooddathib.createFooditem(fd);
 		
 		 System.out.println("Creat food Successful ");
 		
@@ -31,7 +31,7 @@ public static FoodDAO acctdaohib= new FoodDAOHibernate();
 	public void getfoodByIdtest() {
 		  
 		 int fid =3;
-		Food food = acctdaohib.getAccountById(fid);
+		Food food = fooddathib.getFooditemById(fid);
 		 System.out.println("Testing getAcctById "+ food);
 
 }
@@ -49,7 +49,7 @@ public static FoodDAO acctdaohib= new FoodDAOHibernate();
 		  
 		 Set<BillFoodItem> setbill = new HashSet<BillFoodItem>(); 
 		 Food acct = new Food(1,"Peperoni Piza",12,350,setbill);
-		 Food acctt = acctdaohib.updateFoodAccount(acct);
+		 Food acctt = fooddathib.updateFooditem(acct);
 		 System.out.println(acctt);
 	
 	}

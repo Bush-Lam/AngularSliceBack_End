@@ -1,5 +1,7 @@
 package dev.anthony.daos;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +13,7 @@ public class AccountDAOHibernate implements AccountDAO {
 	
 	private SessionFactory sf = HibernateUtil.getSessionFactory();
 
-	public Account CreatAccount(Account account) {
+	public Account CreateAccount(Account account) {
 		try {
 		Session sess = sf.openSession();
 		sess.beginTransaction();
@@ -50,13 +52,18 @@ public class AccountDAOHibernate implements AccountDAO {
 				return account;
 	}
 
-	public boolean ddeleteAccount(Account account) {
+	public boolean deleteAccount(Account account) {
 		Session sess =sf.openSession();
 		sess.beginTransaction();
 		sess.delete(account);
 		sess.getTransaction().commit();
 		sess.close();
 		return true;
+	}
+
+	public List<Account> getAllAccounts() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

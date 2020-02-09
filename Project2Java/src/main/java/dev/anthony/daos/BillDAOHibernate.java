@@ -38,6 +38,36 @@ public class BillDAOHibernate implements BillDAO {
 		return bill;
 	}
 
+	public Bill getAllBills() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Bill getSumAllBillsByAccount() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Bill getAllBillsByCertainDateRange() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Bill sortByDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Bill sortByTotal() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Bill sortByAccountId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 }

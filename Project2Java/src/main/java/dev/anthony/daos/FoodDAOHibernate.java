@@ -10,7 +10,7 @@ public class FoodDAOHibernate implements FoodDAO {
 	
 	private SessionFactory sf = HibernateUtil.getSessionFactory();
 
-	public Food CreatAccount(Food food) {
+	public Food createFooditem(Food food) {
 		Session sess = sf.openSession();
 		sess.beginTransaction();
 		sess.save(food);
@@ -19,7 +19,7 @@ public class FoodDAOHibernate implements FoodDAO {
 		return food;
 	}
 
-	public Food getAccountById(int id) {
+	public Food getFooditemById(int id) {
 		Session sess = sf.openSession();
 		Food food = sess.get(Food.class, id);
 		sess.close();
@@ -27,7 +27,7 @@ public class FoodDAOHibernate implements FoodDAO {
 		return food;
 	}
 
-	public Food getfoodByname(String name) {
+	public Food getFooditemByName(String name) {
 		Session sess = sf.openSession();
 		Food food = sess.get(Food.class, name);
 		sess.close();
@@ -35,7 +35,7 @@ public class FoodDAOHibernate implements FoodDAO {
 		return food;
 	}
 
-	public Food updateFoodAccount(Food food) {
+	public Food updateFooditem(Food food) {
 		Session sess = sf.openSession();
 		sess.beginTransaction();
 		sess.update(food);
@@ -45,7 +45,7 @@ public class FoodDAOHibernate implements FoodDAO {
 		return food;
 	}
 
-	public boolean ddeleteAccount(Food food) {
+	public boolean deleteFooditem(Food food) {
 		Session sess = sf.openSession();
 		sess.beginTransaction();
 		sess.delete(food);
@@ -53,7 +53,6 @@ public class FoodDAOHibernate implements FoodDAO {
 		sess.close();
 		return true;
 	}
-	
 	
 
 }

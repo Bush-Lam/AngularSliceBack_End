@@ -9,6 +9,12 @@ public interface BillDAO {
 	
 	//read
 	Bill getBillById(int id);
+	Bill getAllBills();
+	Bill getSumAllBillsByAccount();
+	Bill getAllBillsByCertainDateRange();
+	Bill sortByDate();
+	Bill sortByTotal();
+	Bill sortByAccountId();
 	
 	// update
 	Bill updateBill(Bill bill);

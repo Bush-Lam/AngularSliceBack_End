@@ -19,17 +19,15 @@ import dev.anthony.entities.BillFoodItem;
 
 public class BillFoodItemDAOtest {
 
-	public static BillFoodItemDao acctdaohib= new BillFoodItemDAOHibernate();
+	public static BillFoodItemDao billfooditemdao = new BillFoodItemDAOHibernate();
 	public static BillDAO bil= new BillDAOHibernate();
 	public static FoodDAO food= new FoodDAOHibernate();
-	
-	
-	
+		
 	@Test
 	public void getAcctByBillIdtest() {
 		
 	     int bid=2; 
-		BillFoodItem acct = acctdaohib.getAccountByBillId(bid);
+		BillFoodItem acct = billfooditemdao.getAccountByBillId(bid);
 		
 		 System.out.println(acct);
 		
@@ -38,7 +36,7 @@ public class BillFoodItemDAOtest {
 	public void getAcctByFoodIdtest() {
 		  
 		 int fid=1; 
-			BillFoodItem acct = acctdaohib.getAccountByFoodId(fid);
+			BillFoodItem acct = billfooditemdao.getAccountByFoodId(fid);
 			
 			 System.out.println(acct);
 

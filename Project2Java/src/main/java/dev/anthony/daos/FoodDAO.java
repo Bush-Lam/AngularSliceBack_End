@@ -7,16 +7,16 @@ import dev.anthony.entities.Food;
 public interface FoodDAO {
 	
 	   // creat
-		Food CreatAccount(Food food);
+		Food createFooditem(Food food);
 		
 		// read
-		Food getAccountById(int id);
-		Food getfoodByname(String name);
+		Food getFooditemById(int id);
+		Food getFooditemByName(String name);
 		
 		// update
-		Food updateFoodAccount(Food food);
+		Food updateFooditem(Food food);
 		
 		// delete
-		boolean ddeleteAccount(Food account);
+		boolean deleteFooditem(Food account);
 
 }
