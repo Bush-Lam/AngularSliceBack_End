@@ -30,7 +30,7 @@ public class BillDAOtest {
 	@Test
 	public void getBillByIdtest() {
 		  
-		 int id =2;
+		 int id = 10;
 		Bill b = billdaohib.getBillById(id);
 		
 		 System.out.println("Testing getbillById "+ b);

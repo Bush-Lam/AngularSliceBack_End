@@ -20,11 +20,11 @@ public class BillFoodItem {
 	private int amount;
 	
     @ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "b_id")
+	@JoinColumn(name = "b_id") // foreign key
 	private Bill bill;
 
     @ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "f_id")
+	@JoinColumn(name = "f_id") // foreign key 
 	private Food food;
 
 	public BillFoodItem() {

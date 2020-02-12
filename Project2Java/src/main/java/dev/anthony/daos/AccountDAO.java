@@ -7,7 +7,7 @@ import dev.anthony.entities.Account;
 public interface AccountDAO {
 	
 	// create
-	Account CreateAccount(Account account);
+	Account createAccount(Account account);
 	
 	// read
 	Account getAccountById(int id);

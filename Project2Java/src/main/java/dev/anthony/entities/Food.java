@@ -30,7 +30,7 @@ public class Food {
 	@Column(name = "calories")
 	private int calories;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy ="food")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy ="food") // look for the food object in billfooditem
 	private Set<BillFoodItem> billOfFood = new HashSet<BillFoodItem>();
 
 	public Food() {

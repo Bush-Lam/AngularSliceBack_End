@@ -10,7 +10,7 @@ public class BillFoodItemDAOHibernate implements BillFoodItemDao {
 	
 	private SessionFactory sf = HibernateUtil.getSessionFactory();
 
-	public BillFoodItem CreatAccount(BillFoodItem billFI) {
+	public BillFoodItem createBillFooditem (BillFoodItem billFI) {
 		Session sess = sf.openSession();
 		sess.beginTransaction();
 		sess.save(billFI);
@@ -19,21 +19,21 @@ public class BillFoodItemDAOHibernate implements BillFoodItemDao {
 		return billFI;
 	}
 
-	public BillFoodItem getAccountByBillId(int bid) {
+	public BillFoodItem getBillFooditemId(int bid) {
 		Session sess = sf.openSession();
 		BillFoodItem billFI = sess.get(BillFoodItem.class, bid);
 		sess.close();
 		return billFI;
 	}
 
-	public BillFoodItem getAccountByFoodId(int fid) {
+	public BillFoodItem getAllBillFooditemsByBillId(int bid) {
 		Session sess = sf.openSession();
-		BillFoodItem billFI = sess.get(BillFoodItem.class, fid);
+		BillFoodItem billFI = sess.get(BillFoodItem.class, bid);
 		sess.close();
 		return billFI;
 	}
 
-	public BillFoodItem updateAccount(BillFoodItem amt) {
+	public BillFoodItem updateBillFooditem(BillFoodItem amt) {
 		Session sess =sf.openSession();
 		sess.beginTransaction();
 		sess.update(amt);
@@ -42,7 +42,7 @@ public class BillFoodItemDAOHibernate implements BillFoodItemDao {
 		return amt;
 	}
 
-	public boolean ddeleteAccount(BillFoodItem billfooditem) {
+	public boolean deleteBillFooditem(BillFoodItem billfooditem) {
 		Session sess =sf.openSession();
 		sess.beginTransaction();
 		sess.delete(billfooditem);

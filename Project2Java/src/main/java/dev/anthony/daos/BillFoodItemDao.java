@@ -4,16 +4,16 @@ import dev.anthony.entities.BillFoodItem;
 
 public interface BillFoodItemDao {
 	// creat
-	BillFoodItem CreatAccount(BillFoodItem billFI);
+	BillFoodItem createBillFooditem(BillFoodItem billfooditem);
 		
 	// read
-	BillFoodItem getAccountByBillId(int bid);
-	BillFoodItem getAccountByFoodId(int fid);
+	BillFoodItem getBillFooditemId(int bid);
+	BillFoodItem getAllBillFooditemsByBillId(int bid);
 		
 	// update
-	BillFoodItem updateAccount(BillFoodItem account);
+	BillFoodItem updateBillFooditem(BillFoodItem billfooditem);
 		
 	// delete
-	boolean ddeleteAccount(BillFoodItem account);
+	boolean deleteBillFooditem(BillFoodItem billfooditem);
 
 }

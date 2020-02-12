@@ -18,7 +18,7 @@ public static AccountDAO acctdaohib= new AccountDAOHibernate();
 	public void CreatAccttest() {
 		 Set<Bill> setbill = new HashSet<Bill>(); 
 		 Account acct = new Account(1,"61Bo","password","tpo@gmail.com","Yoe","Boe",1,setbill);
-		Account acctt = acctdaohib.CreateAccount(acct);
+		Account acctt = acctdaohib.createAccount(acct);
 		
 		 System.out.println(acctt);
 		

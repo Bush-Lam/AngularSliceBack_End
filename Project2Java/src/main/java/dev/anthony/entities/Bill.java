@@ -33,7 +33,7 @@ public class Bill {
 	@Column(name= "orderDate")
 	private String orderDate;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy ="bill")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy ="bill") // mappedBy - look for the bill object in billfooditem, should match
 	private Set<BillFoodItem> bill = new HashSet<BillFoodItem>();
 	
 

@@ -13,7 +13,7 @@ public class AccountDAOHibernate implements AccountDAO {
 	
 	private SessionFactory sf = HibernateUtil.getSessionFactory();
 
-	public Account CreateAccount(Account account) {
+	public Account createAccount(Account account) {
 		try {
 		Session sess = sf.openSession();
 		sess.beginTransaction();

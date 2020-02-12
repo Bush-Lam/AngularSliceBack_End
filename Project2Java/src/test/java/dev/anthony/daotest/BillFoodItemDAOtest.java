@@ -27,20 +27,21 @@ public class BillFoodItemDAOtest {
 	public void getAcctByBillIdtest() {
 		
 	     int bid=2; 
-		BillFoodItem acct = billfooditemdao.getAccountByBillId(bid);
+		BillFoodItem acct = billfooditemdao.getBillFooditemId(bid);
 		
 		 System.out.println(acct);
 		
 	}
-	@Test
-	public void getAcctByFoodIdtest() {
-		  
-		 int fid=1; 
-			BillFoodItem acct = billfooditemdao.getAccountByFoodId(fid);
-			
-			 System.out.println(acct);
-
-}
+	
+//	@Test
+//	public void getAcctByFoodIdtest() {
+//		  
+//		 int fid=1; 
+//			BillFoodItem acct = billfooditemdao.getAccountByFoodId(fid);
+//			
+//			 System.out.println(acct);
+//
+//}
 	
 //	@Test
 //	public void updateAccttest() {

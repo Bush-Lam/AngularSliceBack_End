@@ -4,6 +4,7 @@ import java.util.HashSet;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -41,7 +42,7 @@ public class Account {
 	@Column(name ="isManager")
 	private int isManager;
 	
-	@OneToMany(fetch = FetchType.LAZY,mappedBy ="account")
+	@OneToMany(fetch = FetchType.LAZY,mappedBy ="account", cascade = CascadeType.ALL, orphanRemoval = true) // look for the account obj in bill, should match
 	private Set<Bill> bills = new HashSet<Bill>();
 	
 
