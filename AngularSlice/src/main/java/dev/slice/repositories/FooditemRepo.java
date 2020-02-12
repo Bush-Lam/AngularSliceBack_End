@@ -17,7 +17,7 @@ public interface FooditemRepo {
 		Food getFooditemByName(String name);
 		Set<Food> sortByCalories();
 		Set<Food> sortByPrice();
-		
+		Set<Food> sortByType();
 		// update
 		Food updateFooditem(Food food);
 		
