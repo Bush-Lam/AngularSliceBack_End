@@ -1,5 +1,7 @@
 package dev.slice.services;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,32 +19,32 @@ public class BillServiceImpl implements BillService {
 	BillRepo br;
 	@Override
 	public Bill CreatBill(Bill bill) {
-		
-		return null;
+		bill = this.br.save(bill);
+		return bill;
 	}
 
 	@Override
 	public Bill getBillById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Bill bil= this.br.findById(id).get();
+		return bil;
 	}
 
 	@Override
 	public Set<Bill> getAllBills() {
-		// TODO Auto-generated method stub
-		return null;
+		Set<Bill> billl= new HashSet<Bill>((Collection<? extends Bill>)br.findAll());
+		return billl;
 	}
 
 	@Override
 	public Bill updateBill(Bill bill) {
-		// TODO Auto-generated method stub
-		return null;
+		bill = br.save(bill);
+		return bill;
 	}
 
 	@Override
 	public boolean deleteBill(Bill bill) {
-		// TODO Auto-generated method stub
-		return false;
+		br.delete(bill);
+		return true;
 	}
 
 }

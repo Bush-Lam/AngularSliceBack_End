@@ -2,12 +2,13 @@ package dev.slice.repositories;
 
 import java.util.Set;
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import dev.slice.entities.Bill;
 
 @Repository
-public interface BillRepo {
+public interface BillRepo extends CrudRepository<Bill, Integer>{
 	// create
 	Bill createBill(Bill bill);
 	
