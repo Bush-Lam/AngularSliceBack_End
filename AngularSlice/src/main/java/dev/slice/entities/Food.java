@@ -1,6 +1,7 @@
 package dev.slice.entities;
 
 import java.util.HashSet;
+
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -13,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Fooditem")
+@Table(name = "fooditem")
 public class Food {
 
 	@Id
@@ -35,7 +36,10 @@ public class Food {
 	
 	@Column(name = "calories")
 	private int calories;
-
+	
+	@Column(name = "url")
+	private String url;
+	
 	public int getFoodID() {
 		return foodID;
 	}
@@ -44,7 +48,7 @@ public class Food {
 		super();
 	}
 
-	public Food(int foodID, String foodType, String description, String name, int price, int calories) {
+	public Food(int foodID, String foodType, String description, String name, int price, int calories, String url) {
 		super();
 		this.foodID = foodID;
 		this.foodType = foodType;
@@ -52,10 +56,7 @@ public class Food {
 		this.name = name;
 		this.price = price;
 		this.calories = calories;
-	}
-
-	public void setFoodID(int foodID) {
-		this.foodID = foodID;
+		this.url = url;
 	}
 
 	public String getFoodType() {
@@ -98,10 +99,22 @@ public class Food {
 		this.calories = calories;
 	}
 
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public void setFoodID(int foodID) {
+		this.foodID = foodID;
+	}
+
 	@Override
 	public String toString() {
 		return "Food [foodID=" + foodID + ", foodType=" + foodType + ", description=" + description + ", name=" + name
-				+ ", price=" + price + ", calories=" + calories + "]";
+				+ ", price=" + price + ", calories=" + calories + ", url=" + url + "]";
 	}
-	
+
 }
