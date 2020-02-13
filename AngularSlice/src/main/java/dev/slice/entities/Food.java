@@ -1,6 +1,7 @@
 package dev.slice.entities;
 
 import java.util.HashSet;
+
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -13,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Fooditem")
+@Table(name = "fooditem")
 public class Food {
 
 	@Id

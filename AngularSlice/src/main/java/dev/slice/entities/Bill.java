@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Bill")
+@Table(name = "bill")
 public class Bill {
 
 	@Id
@@ -43,13 +43,12 @@ public class Bill {
 	}
 
 
-	public Bill(int bId, Account account, int total, String orderDate, Set<BillFoodItem> billfooditems) {
+	public Bill(int bId, Account account, int total, String orderDate) {
 		super();
 		this.bId = bId;
 		this.account = account;
 		this.total = total;
 		this.orderDate = orderDate;
-		this.setofbillfooditems = billfooditems;
 	}
 
 

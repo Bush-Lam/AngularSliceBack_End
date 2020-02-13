@@ -2,6 +2,7 @@ package dev.slice.entities;
 
 import java.util.HashSet;
 
+
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -50,8 +51,7 @@ public class Account {
 	}
 
 
-	public Account(int aid, String username, String password, String email, String fname, String lname, int isManager,
-			Set<Bill> bills) {
+	public Account(int aid, String username, String password, String email, String fname, String lname, int isManager) {
 		super();
 		this.aid = aid;
 		Username = username;
@@ -60,7 +60,6 @@ public class Account {
 		this.fname = fname;
 		this.lname = lname;
 		this.isManager = isManager;
-		this.setofbills = bills;
 	}
 
 
