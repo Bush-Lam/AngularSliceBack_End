@@ -6,9 +6,13 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import dev.slice.entities.Account;
+import dev.slice.entities.Bill;
 
 @Repository
-public interface AccountRepo extends CrudRepository<Account,Integer> {
+
+public interface AccountRepo extends CrudRepository<Account, Integer> {
+
+
 	
 //	// create
 	Account createAccount(Account account);
