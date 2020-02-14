@@ -100,7 +100,6 @@ public class Bill {
 //	public void setBillFooditems(Set<BillFoodItem> bill) {
 //		this.setofbillfooditems = bill;
 //	}
-//
 
 	@Override
 	public String toString() {
