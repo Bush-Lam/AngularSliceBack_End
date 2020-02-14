@@ -15,8 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
 
-import com.sun.jna.platform.win32.Advapi32Util.Account;
-
 import dev.slice.entities.Bill;
 import dev.slice.repositories.AccountRepo;
 import dev.slice.repositories.BillRepo;

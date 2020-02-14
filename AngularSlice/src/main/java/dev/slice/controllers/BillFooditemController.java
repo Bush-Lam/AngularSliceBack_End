@@ -28,12 +28,13 @@ public class BillFooditemController {
 	@ResponseBody
 	@RequestMapping(value = "/BillFooditems", method = RequestMethod.POST)
 	public BillFoodItem createBillFooditem(@RequestBody BillFoodItem billfooditem) {
+		
 		return as.createBillFooditem(billfooditem);
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/BillFooditems/query", method = RequestMethod.GET)
-	public BillFoodItem getBillFooditemByBillId(@RequestParam int bid) {
+	@RequestMapping(value = "/BillFooditems/{bid}", method = RequestMethod.GET)
+	public BillFoodItem getBillFooditemByBillId(@PathVariable int bid) {
 		System.out.println(bid);
 		return as.getBillFooditemByBillId(bid);
 
