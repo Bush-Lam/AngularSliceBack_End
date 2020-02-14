@@ -20,7 +20,6 @@ import dev.slice.repositories.AccountRepo;
 import dev.slice.repositories.BillFooditemRepo;
 import dev.slice.repositories.BillRepo;
 import dev.slice.repositories.FooditemRepo;
-import dev.slice.services.BillFooditemService;
 
 @SpringBootTest
 //@Transactional // each test method is a transaction. It will automatically rollback any changes to the database made in a test
@@ -36,14 +35,11 @@ class BillFooditemTest {
 	@Autowired
 	AccountRepo ar;
 	
-	@Autowired
-	BillFooditemService as;
-	
 	@Test
 	void AddBillFooditem() {
 //		BillFoodItem bfi = new BillFoodItem(1, br.findById(1).get(), fir.findById(1).get());
 //		bfirepo.save(bfi);
-		System.out.println(as.getAllBillFooditems());
+		System.out.println(ar.findAll());
 	}
 	
 }
