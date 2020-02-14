@@ -32,7 +32,7 @@ public class BillController {
 		return bs.getBillById(bid);
 	}
 	@ResponseBody
-	@RequestMapping(value = "/Bill", method = RequestMethod.PUT)
+	@RequestMapping(value = "/Bill", method = RequestMethod.GET)
 	public Set<Bill>getAllBill(){
 		return bs.getAllBills();
 	}

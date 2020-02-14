@@ -42,9 +42,9 @@ public class Account {
 	@Column(name ="isManager")
 	private int isManager;
 	
-	@OneToMany(fetch = FetchType.LAZY,mappedBy ="account", cascade = CascadeType.ALL, orphanRemoval = true) // look for the account obj in bill, should match
-	private Set<Bill> setofbills = new HashSet<Bill>();
-	
+//	@OneToMany(fetch = FetchType.LAZY,mappedBy ="account", cascade = CascadeType.ALL, orphanRemoval = true) // look for the account obj in bill, should match
+//	private Set<Bill> setofbills = new HashSet<Bill>();
+//	
 
 	public Account() {
 		super();
@@ -133,14 +133,14 @@ public class Account {
 	}
 
 
-	public Set<Bill> getBills() {
-		return setofbills;
-	}
-
-
-	public void setBills(Set<Bill> bills) {
-		this.setofbills = bills;
-	}
+//	public Set<Bill> getBills() {
+//		return setofbills;
+//	}
+//
+//
+//	public void setBills(Set<Bill> bills) {
+//		this.setofbills = bills;
+//	}
 
 
 	@Override

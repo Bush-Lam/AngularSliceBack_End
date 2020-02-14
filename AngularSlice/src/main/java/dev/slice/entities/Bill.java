@@ -34,8 +34,8 @@ public class Bill {
 	@Column(name= "orderDate")
 	private String orderDate;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy ="bill", cascade = CascadeType.ALL) // look for bill object in billfooditem
-	private Set<BillFoodItem> setofbillfooditems = new HashSet<BillFoodItem>();
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy ="bill", cascade = CascadeType.ALL) // look for bill object in billfooditem
+//	private Set<BillFoodItem> setofbillfooditems = new HashSet<BillFoodItem>();
 	
 
 	public Bill() {
@@ -92,15 +92,15 @@ public class Bill {
 	}
 
 
-	public Set<BillFoodItem> getBillFooditems() {
-		return setofbillfooditems;
-	}
-
-
-	public void setBillFooditems(Set<BillFoodItem> bill) {
-		this.setofbillfooditems = bill;
-	}
-
+//	public Set<BillFoodItem> getBillFooditems() {
+//		return setofbillfooditems;
+//	}
+//
+//
+//	public void setBillFooditems(Set<BillFoodItem> bill) {
+//		this.setofbillfooditems = bill;
+//	}
+//
 
 	@Override
 	public String toString() {
