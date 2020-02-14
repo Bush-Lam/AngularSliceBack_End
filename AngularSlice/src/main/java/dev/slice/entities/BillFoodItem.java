@@ -35,14 +35,15 @@ public class BillFoodItem {
 		super();
 	}
 
-	public BillFoodItem(int amount, Bill bill, Food food) {
+    public BillFoodItem(int billfooditemid, int amount, Bill bill, Food food) {
 		super();
+		this.billfooditemid = billfooditemid;
 		this.amount = amount;
 		this.bill = bill;
 		this.food = food;
 	}
-	
-    public int getBillfooditemid() {
+
+	public int getBillfooditemid() {
 		return billfooditemid;
 	}
 
