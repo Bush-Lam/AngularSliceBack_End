@@ -101,7 +101,6 @@ public class Bill {
 //		this.setofbillfooditems = bill;
 //	}
 
-
 	@Override
 	public String toString() {
 		return "Bill [bId=" + bId + ", total=" + total + ", orderDate=" + orderDate + "]";
