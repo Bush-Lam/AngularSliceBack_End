@@ -12,12 +12,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="Bill_Fooditem")
+@Table(name ="bill_fooditem")
 public class BillFoodItem {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="bill_fooditem_id")
+    @Column(name ="billdfooditemid")
 	private int billfooditemid;
     
 	@Column(name ="amount")
@@ -35,15 +35,14 @@ public class BillFoodItem {
 		super();
 	}
 
-    public BillFoodItem(int billfooditemid, int amount, Bill bill, Food food) {
+	public BillFoodItem(int amount, Bill bill, Food food) {
 		super();
-		this.billfooditemid = billfooditemid;
 		this.amount = amount;
 		this.bill = bill;
 		this.food = food;
 	}
-
-	public int getBillfooditemid() {
+	
+    public int getBillfooditemid() {
 		return billfooditemid;
 	}
 
