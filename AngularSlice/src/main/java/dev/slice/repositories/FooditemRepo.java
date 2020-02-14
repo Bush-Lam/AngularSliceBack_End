@@ -10,19 +10,21 @@ import dev.slice.entities.Food;
 @Repository
 public interface FooditemRepo extends CrudRepository<Food,Integer>{
 
-	   // creat
-//		Food createFooditem(Food food);
-//		
-//		// read
-//		Food getFooditemById(int id);
-//		Set<Food> getAllFooditems();
-//		Food getFooditemByName(String name);
+	   // create
+		Food createFood(Food food);
+	
+		// read
+		Food getFoodById(int id);
+		Set<Food> getAllFood();
+		Food getFoodByName(String name);
+		Set<Food> getAllFoodByType(String type);
 //		Set<Food> sortByCalories();
 //		Set<Food> sortByPrice();
 //		Set<Food> sortByType();
-//		// update
-//		Food updateFooditem(Food food);
+	
+		// update
+		Food updateFood(Food food);
 		
-		// delete - probably dont want this
-//		boolean deleteFooditem(Food account);
+		// delete - probably don't need it, but will have it in case
+		boolean deleteFood(Food food);
 }
