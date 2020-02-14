@@ -11,8 +11,8 @@ import dev.slice.entities.Bill;
 @Repository
 public interface BillRepo extends CrudRepository<Bill,Integer>{
 	
-	List<Bill>findByTotalGreaterThan(int total);
-	List<Bill>findByid(int acctId);
+//	List<Bill>findByTotalGreaterThan(int total);
+//	List<Bill>findByid(int acctId);
 
 //	// create;
 //	Bill createBill(Bill bill);

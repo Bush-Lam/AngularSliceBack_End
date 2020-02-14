@@ -31,19 +31,17 @@ class BillTest {
 	@Autowired
 	AccountRepo ar;
 	
-//	@Test
-//	@Commit
-//	@Order(1)
-//	void addBill() {
-//
-//		Bill b= new Bill();
-//		b.setbId(1);
-//		b.setTotal(20);
-//		b.setOrderDate("2020-02-13 04:07:03");
-//		b.setAccount(ar.findById(1).get());
-//		br.save(b);
-//		System.out.println(b +" Has been Added");
-//	}
+	@Test
+	void addBill() {
+
+		Bill b= new Bill();
+		b.setbId(1);
+		b.setTotal(20);
+		b.setOrderDate("2020-02-13 04:07:03");
+		b.setAccount(ar.findById(1).get());
+		br.save(b);
+		System.out.println(b +" Has been Added");
+	}
 	
 //	@Test
 //	@Commit
@@ -58,7 +56,7 @@ class BillTest {
 //	
 	@Test
 	void findById() {
-		Bill bil = br.findById(2).get();
+		Bill bil = br.findById(1).get();
 		System.out.println(bil);
 	}
 //	
