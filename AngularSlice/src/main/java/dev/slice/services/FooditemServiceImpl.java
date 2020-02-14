@@ -1,5 +1,6 @@
 package dev.slice.services;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,38 +25,40 @@ public class FooditemServiceImpl  implements FooditemService{
 
 	@Override
 	public Food getFoodById(int id) {
-		Food food = this.fir.getFoodById(id);
+		Food food = this.fir.findById(id).get();
 		return food;
 	}
 
 	@Override
 	public Food getFoodByName(String name) {
-		Food food = this.fir.getFoodByName(name);
+		Food food = this.fir.findByName(name);
 		return food;
 	}
 
 	@Override
-	public Set<Food> getAllFoodByType(String type) {
-		Set<Food> foods = this.fir.getAllFoodByType(type); 
+	public List<Food> getAllFoodByType(String type) {
+		List<Food> foods = this.fir.findByFoodType(type); 
 		return foods;
 	}
 
 	@Override
-	public Set<Food> getAllFood() {
-		Set<Food> foods = this.fir.getAllFood();
+	public List<Food> getAllFood() {
+		List<Food> foods = (List<Food>) this.fir.findAll();
 		return foods;
 	}
 
 	@Override
 	public Food updateFood(Food food) {
-		food = this.fir.updateFood(food);
+		System.out.println(food);
+		food = fir.save(food);
+		System.out.println(food);
 		return food;
 	}
 
-	@Override
-	public boolean deleteFood(Food food) {
-		this.fir.delete(food);
-		return true;
-	}
+//	@Override
+//	public boolean deleteFood(Food food) {
+//		this.fir.delete(food);
+//		return true;
+//	}
 
 }
