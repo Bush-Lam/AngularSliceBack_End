@@ -17,6 +17,7 @@ public class BillServiceImpl implements BillService {
 
 	@Autowired
 	BillRepo br;
+	
 	@Override
 	public Bill CreatBill(Bill bill) {
 		bill = this.br.save(bill);
