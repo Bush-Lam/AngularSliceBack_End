@@ -32,8 +32,8 @@ public class BillFooditemController {
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/BillFooditems/{bid}", method = RequestMethod.GET)
-	public BillFoodItem getBillFooditemByBillId(@PathVariable int bid) {
+	@RequestMapping(value = "/BillFooditems/query", method = RequestMethod.GET)
+	public BillFoodItem getBillFooditemByBillId(@RequestParam int bid) {
 		System.out.println(bid);
 		return as.getBillFooditemByBillId(bid);
 

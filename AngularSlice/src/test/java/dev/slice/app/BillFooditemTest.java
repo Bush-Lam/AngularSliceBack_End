@@ -39,7 +39,7 @@ class BillFooditemTest {
 	void AddBillFooditem() {
 //		BillFoodItem bfi = new BillFoodItem(1, br.findById(1).get(), fir.findById(1).get());
 //		bfirepo.save(bfi);
-		System.out.println(ar.findAll());
+		System.out.println(bfirepo.findById(3).get());
 	}
 	
 }
