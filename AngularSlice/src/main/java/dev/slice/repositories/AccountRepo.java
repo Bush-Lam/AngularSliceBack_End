@@ -1,7 +1,5 @@
 package dev.slice.repositories;
 
-import java.util.List;
-
 import java.util.Set;
 
 import org.springframework.data.repository.CrudRepository;
@@ -17,15 +15,15 @@ public interface AccountRepo extends CrudRepository<Account, Integer> {
 
 	
 //	// create
-//	Account createAccount(Account account);
+	Account createAccount(Account account);
 //	
 //	// read
-//	Account getAccountById(int id);
-//	Set<Account> getAllAccounts();
+	Account getAccountById(int id);
+	Set<Account> getAllAccounts();
 //	
 //	// update
-//	Account updateAccount(Account account);
+	Account updateAccount(Account account);
 //	
 //	// delete
-//	boolean deleteAccount(Account account);
+	boolean deleteAccount(Account account);
 }
