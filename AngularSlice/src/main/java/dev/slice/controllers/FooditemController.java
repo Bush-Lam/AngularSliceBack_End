@@ -1,5 +1,6 @@
 package dev.slice.controllers;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,39 +33,39 @@ public class FooditemController {
 	//Read
 	@ResponseBody
 	@RequestMapping(value = "/food", method = RequestMethod.GET)
-	public Set<Food> getAllFood(){
+	public List<Food> getAllFood(){
 		return fis.getAllFood();
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/food/{id}", method = RequestMethod.GET)
-	public Food getFoodById(@PathVariable int id){
+	@RequestMapping(value = "/food/id", method = RequestMethod.GET)
+	public Food getFoodById(@RequestParam int id){
 		return fis.getFoodById(id);
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/food/{name}", method = RequestMethod.GET)
-	public Food getFoodByName(@PathVariable String name){
+	@RequestMapping(value = "/food/name", method = RequestMethod.GET)
+	public Food getFoodByName(@RequestParam String name){
 		return fis.getFoodByName(name);
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/food/query", method = RequestMethod.GET)
-	public Set<Food> getFoodByID(@RequestParam String type){
+	@RequestMapping(value = "/food/type", method = RequestMethod.GET)
+	public List<Food> getFoodByType(@RequestParam String type){
 		return fis.getAllFoodByType(type);
 	}
 	
 	//Update
 	@ResponseBody
-	@RequestMapping(value = "/food", method = RequestMethod.PUT)
+	@RequestMapping(value = "/food/update", method = RequestMethod.PUT)
 	public Food updateFood(@RequestBody Food food){
 		return fis.updateFood(food);
 	}
 	
-	//Delete
-	@ResponseBody
-	@RequestMapping(value = "/food/{id}", method = RequestMethod.DELETE)
-	public Boolean deleteFood(@PathVariable int id) {
-		return fis.deleteFood(fis.getFoodById(id));
-	}
+//	//Delete
+//	@ResponseBody
+//	@RequestMapping(value = "/food/{id}", method = RequestMethod.DELETE)
+//	public Boolean deleteFood(@PathVariable int id) {
+//		return fis.deleteFood(fis.getFoodById(id));
+//	}
 }
