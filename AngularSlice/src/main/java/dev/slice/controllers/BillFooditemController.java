@@ -7,6 +7,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import dev.slice.services.BillFooditemServiceImpl;
 
 @Component
 @Controller
+@CrossOrigin(origins = "http://localhost:4200")
 public class BillFooditemController {
 
 	@Autowired
@@ -33,8 +35,8 @@ public class BillFooditemController {
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/BillFooditems/{bid}", method = RequestMethod.GET)
-	public BillFoodItem getBillFooditemByBillId(@PathVariable int bid) {
+	@RequestMapping(value = "/BillFooditems/query", method = RequestMethod.GET)
+	public BillFoodItem getBillFooditemByBillId(@RequestParam int bid) {
 		System.out.println(bid);
 		return as.getBillFooditemByBillId(bid);
 
