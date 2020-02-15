@@ -54,7 +54,7 @@ public class Account {
 	public Account(int aid, String username, String password, String email, String fname, String lname, int isManager) {
 		super();
 		this.aid = aid;
-		Username = username;
+		this.Username = username;
 		this.password = password;
 		this.email = email;
 		this.fname = fname;
@@ -79,7 +79,7 @@ public class Account {
 
 
 	public void setUsername(String username) {
-		Username = username;
+		this.Username = username;
 	}
 
 

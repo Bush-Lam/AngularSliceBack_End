@@ -1,31 +1,24 @@
 package dev.slice.repositories;
 
-import java.util.List;
-
-import java.util.Set;
-
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import dev.slice.entities.Account;
-import dev.slice.entities.Bill;
+
 
 @Repository
-
 public interface AccountRepo extends CrudRepository<Account, Integer> {
-
-
 	
-//	// create
+////	// create
 //	Account createAccount(Account account);
-//	
-//	// read
+////	
+////	// read
 //	Account getAccountById(int id);
 //	Set<Account> getAllAccounts();
-//	
-//	// update
+////	
+////	// update
 //	Account updateAccount(Account account);
-//	
-//	// delete
+////	
+////	// delete
 //	boolean deleteAccount(Account account);
 }
