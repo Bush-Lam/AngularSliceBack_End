@@ -15,8 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
 
-import com.sun.jna.platform.win32.Advapi32Util.Account;
-
 import dev.slice.entities.Bill;
 import dev.slice.repositories.AccountRepo;
 import dev.slice.repositories.BillRepo;
@@ -43,31 +41,31 @@ class BillTest {
 		System.out.println(b +" Has been Added");
 	}
 	
-//	@Test
-//	@Commit
-//	@Order(2)
-//	void updateBillTot() {
-//		
-//		Bill bill = br.findById(1).get();
-//		bill.setTotal(60);
-//		br.save(bill);
-//		System.out.println(bill+" (Tot Has been Updated)");
-//	}
-//	
+	@Test
+	@Commit
+	
+	void updateBillTot() {
+		
+		Bill bill = br.findById(1).get();
+		bill.setTotal(60);
+		br.save(bill);
+		System.out.println(bill+" (Tot Has been Updated)");
+	}
+	
 	@Test
 	void findById() {
 		Bill bil = br.findById(1).get();
 		System.out.println(bil);
 	}
-//	
-//	@Test
-//	@Order(3)
-//	void findByAcctId() {
-//		int aid = 2;
-//		Optional<Bill> bil = br.findById(aid);
-//		System.out.println(bil);
-//	}
-//	
+	
+	@Test
+
+	void findByAcctId() {
+		int aid = 1;
+    	Optional<Bill> bil = br.findById(aid);
+		System.out.println(bil);
+	}
+	
 //	@Test
 //	@Order(4)
 //	void findBytotal() {
