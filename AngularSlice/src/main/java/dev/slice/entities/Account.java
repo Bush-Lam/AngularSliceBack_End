@@ -45,16 +45,14 @@ public class Account {
 //	@OneToMany(fetch = FetchType.LAZY,mappedBy ="account", cascade = CascadeType.ALL, orphanRemoval = true) // look for the account obj in bill, should match
 //	private Set<Bill> setofbills = new HashSet<Bill>();
 	
-
 	public Account() {
 		super();
 	}
 
-
 	public Account(int aid, String username, String password, String email, String fname, String lname, int isManager) {
 		super();
 		this.aid = aid;
-		Username = username;
+		this.Username = username;
 		this.password = password;
 		this.email = email;
 		this.fname = fname;
@@ -79,7 +77,7 @@ public class Account {
 
 
 	public void setUsername(String username) {
-		Username = username;
+		this.Username = username;
 	}
 
 
