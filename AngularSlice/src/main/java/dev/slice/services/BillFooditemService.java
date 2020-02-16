@@ -1,5 +1,6 @@
 package dev.slice.services;
 
+import java.util.List;
 import java.util.Set;
 
 import dev.slice.entities.BillFoodItem;
@@ -9,9 +10,10 @@ public interface BillFooditemService {
 	BillFoodItem createBillFooditem(BillFoodItem billfooditem);
 		
 	// read
-	BillFoodItem getBillFooditemByBillId(int bid);
+	BillFoodItem getBillFooditemByBillFooditemId(int bfiid);
 	Set<BillFoodItem> getAllBillFooditems();
-		
+	List<BillFoodItem> getBillFooditemsByBillId(int bid);
+	
 	// update
 	BillFoodItem updateBillFooditem(BillFoodItem billfooditem);
 		
