@@ -55,7 +55,6 @@ public class AccountServiceImpl implements AccountService{
 	}
 
 	@Override
-<<<<<<< HEAD
 	public Account getAccountByUsername(String username, String password) {
 		Account account = ar.findByUsername(username);
 		if(account == null) {
@@ -65,7 +64,8 @@ public class AccountServiceImpl implements AccountService{
 		}else {
 			return null;
 		}
-=======
+	}
+	
 	public List<Bill> getAllBillsByAccountId(int id) {
 		
 		List<Bill> bills = new ArrayList<Bill>((Collection<? extends Bill>) br.findAll());
@@ -77,7 +77,7 @@ public class AccountServiceImpl implements AccountService{
 			}
 		}
 		return billsbyaccount;
->>>>>>> 8461d40c2d767c8fcb509cb7ab796932010796cf
+
 	}
 
 }
