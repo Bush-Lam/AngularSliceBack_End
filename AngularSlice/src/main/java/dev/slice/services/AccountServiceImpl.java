@@ -65,6 +65,7 @@ public class AccountServiceImpl implements AccountService{
 			return null;
 		}
 	}
+
 	public List<Bill> getAllBillsByAccountId(int id) {
 		
 		List<Bill> bills = new ArrayList<Bill>((Collection<? extends Bill>) br.findAll());
