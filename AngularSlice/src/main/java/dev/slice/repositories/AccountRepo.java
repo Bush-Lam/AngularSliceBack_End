@@ -21,4 +21,5 @@ public interface AccountRepo extends CrudRepository<Account, Integer> {
 ////	
 ////	// delete
 //	boolean deleteAccount(Account account);
+	Account findByUsername(String username);
 }

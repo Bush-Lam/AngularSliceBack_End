@@ -48,4 +48,16 @@ public class AccountServiceImpl implements AccountService{
 		return account;
 	}
 
+	@Override
+	public Account getAccountByUsername(String username, String password) {
+		Account account = ar.findByUsername(username);
+		if(account == null) {
+			return null;
+		}else if(account.getPassword() == password){			
+			return account;
+		}else {
+			return null;
+		}
+	}
+
 }

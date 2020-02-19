@@ -50,4 +50,10 @@ public class AccountController {
 	public Account updateAccount(@RequestBody Account account) {
 		return as.updateAccount(account);
 	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/account/{username}&{password}", method = RequestMethod.GET)
+	public Account getAccountByUsername(@PathVariable String username, String password) {
+		return as.getAccountByUsername(username, password);
+	}
 }

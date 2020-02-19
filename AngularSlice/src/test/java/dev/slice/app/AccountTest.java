@@ -26,6 +26,8 @@ class AccountTest {
 
 	@Autowired
 	AccountRepo ar;
+	
+	
 // WORKS
 //	@Test
 //	@Commit
@@ -82,6 +84,16 @@ class AccountTest {
 //	void getAccountById() {
 //		System.out.println(ar.findById(6));
 //	}
+	@Test
+	@Commit
+	@Order(6)
+	void getAccountByUsername() {
+		AccountServiceImpl asi = new AccountServiceImpl();
+		String username = "tao";
+		String password = "password";
+		System.out.println(ar.findByUsername(username));
+		System.out.println(asi.getAccountByUsername(username, password));
+	}
 
 
 }
