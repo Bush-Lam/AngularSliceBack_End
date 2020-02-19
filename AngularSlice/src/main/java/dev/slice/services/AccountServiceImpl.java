@@ -9,7 +9,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import dev.slice.entities.Account;
+import dev.slice.entities.Bill;
+import dev.slice.entities.BillFoodItem;
 import dev.slice.repositories.AccountRepo;
+import dev.slice.repositories.BillRepo;
 
 @Component
 @Service
@@ -17,6 +20,9 @@ public class AccountServiceImpl implements AccountService{
 
 	@Autowired
 	AccountRepo ar;
+	
+	@Autowired
+	BillRepo br;
 	
 	@Override
 	public Account createAccount(Account account) {
@@ -49,6 +55,7 @@ public class AccountServiceImpl implements AccountService{
 	}
 
 	@Override
+<<<<<<< HEAD
 	public Account getAccountByUsername(String username, String password) {
 		Account account = ar.findByUsername(username);
 		if(account == null) {
@@ -58,6 +65,19 @@ public class AccountServiceImpl implements AccountService{
 		}else {
 			return null;
 		}
+=======
+	public List<Bill> getAllBillsByAccountId(int id) {
+		
+		List<Bill> bills = new ArrayList<Bill>((Collection<? extends Bill>) br.findAll());
+		List<Bill> billsbyaccount = new ArrayList<Bill>();
+		
+		for (int i = 0; i < bills.size(); i++) {
+			if (bills.get(i).getAccount().getAid() == id) {
+				billsbyaccount.add(bills.get(i));
+			}
+		}
+		return billsbyaccount;
+>>>>>>> 8461d40c2d767c8fcb509cb7ab796932010796cf
 	}
 
 }

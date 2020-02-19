@@ -1,7 +1,9 @@
 package dev.slice.services;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +32,9 @@ public class BillFooditemServiceImpl implements BillFooditemService {
 	}
 
 	@Override
-	public BillFoodItem getBillFooditemByBillId(int bid) {
-		System.out.println(bid);
-		return bfir.findById(bid).get();
+	public BillFoodItem getBillFooditemByBillFooditemId(int bfiid) {
+		System.out.println(bfiid);
+		return bfir.findById(bfiid).get();
 	}
 
 	@Override
@@ -49,5 +51,20 @@ public class BillFooditemServiceImpl implements BillFooditemService {
 	public boolean deleteBillFooditem(BillFoodItem billfooditem) {
 		bfir.delete(billfooditem);
 		return true;
+	}
+
+	@Override
+	public List<BillFoodItem> getBillFooditemsByBillId(int bid) {
+		
+		List<BillFoodItem> billfooditems = new ArrayList<BillFoodItem>(getAllBillFooditems());
+		List<BillFoodItem> billfooditemsbybillid = new ArrayList<BillFoodItem>();
+		
+		for (int i = 0; i < billfooditems.size(); i++) {
+			if (billfooditems.get(i).getBill().getbId() == bid) {
+				billfooditemsbybillid.add(billfooditems.get(i));
+			}
+		}
+		System.out.println(billfooditemsbybillid);
+		return billfooditemsbybillid;
 	}
 }

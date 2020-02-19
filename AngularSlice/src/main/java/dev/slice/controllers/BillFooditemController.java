@@ -2,6 +2,7 @@ package dev.slice.controllers;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,36 +29,43 @@ public class BillFooditemController {
 	BillFooditemService as;
 
 	@ResponseBody
-	@RequestMapping(value = "/BillFooditems", method = RequestMethod.POST)
+	@RequestMapping(value = "/billfooditems", method = RequestMethod.POST)
 	public BillFoodItem createBillFooditem(@RequestBody BillFoodItem billfooditem) {
 		
 		return as.createBillFooditem(billfooditem);
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/BillFooditems/query", method = RequestMethod.GET)
-	public BillFoodItem getBillFooditemByBillId(@RequestParam int bid) {
-		System.out.println(bid);
-		return as.getBillFooditemByBillId(bid);
+	@RequestMapping(value = "/billfooditems/billfooditem", method = RequestMethod.GET)
+	public BillFoodItem getBillFooditemByBillId(@RequestParam int bfiid) {
+		System.out.println(bfiid);
+		return as.getBillFooditemByBillFooditemId(bfiid);
 
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/BillFooditems", method = RequestMethod.GET)
+	@RequestMapping(value = "/billfooditems/bill", method = RequestMethod.GET)
+	public List<BillFoodItem> getBillFooditemByBillFooditemId(@RequestParam int bid) {
+		return as.getBillFooditemsByBillId(bid);
+
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/billfooditems", method = RequestMethod.GET)
 	public Set<BillFoodItem> getAllBillFooditems() {
 		return as.getAllBillFooditems();
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/BillFooditems", method = RequestMethod.PUT)
+	@RequestMapping(value = "/billfooditems", method = RequestMethod.PUT)
 	public BillFoodItem updateBillFooditem(@RequestBody BillFoodItem billfooditem) {
 		return as.updateBillFooditem(billfooditem);
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/BillFooditems/{bid}", method = RequestMethod.DELETE)
-	public boolean deleteBillFooditem(@PathVariable int bid) {
-		as.deleteBillFooditem(as.getBillFooditemByBillId(bid));
+	@RequestMapping(value = "/billfooditems/{bid}", method = RequestMethod.DELETE)
+	public boolean deleteBillFooditem(@PathVariable int bfiid) {
+		as.deleteBillFooditem(as.getBillFooditemByBillFooditemId(bfiid));
 		return true;
 	}
 
