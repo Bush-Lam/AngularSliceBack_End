@@ -79,7 +79,7 @@ class AccountTest {
 //	@Commit
 //	@Order(4)
 //	void deleteAccount() {
-//		ar.deleteById(9);
+//		ar.deleteById(10);
 //	}
 //	WORKS
 //	@Test
@@ -93,13 +93,13 @@ class AccountTest {
 	@Order(6)
 	void getAccountByUsername() {
 		
-		String Username = "tao";
-		String password = "password";
+		String username = "test2";
+		String password = "pass2";
 		LoginObject account = new LoginObject();
-		account.setUsername(Username);
+		account.setUsername(username);
 		account.setPassword(password);
-		System.out.println(ar.findByUsername(account.getUsername()));
-		System.out.println(asi.getAccountByUsername(account.getUsername(), account.getPassword()));
+		System.out.println("Find By Username" + ar.findByUsername(account.getUsername()));
+		System.out.println("Get Account By Username" + asi.getAccountByUsername(account.getUsername(), account.getPassword()));
 	}
 
 
