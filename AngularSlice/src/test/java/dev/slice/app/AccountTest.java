@@ -15,8 +15,10 @@ import org.springframework.test.annotation.Commit;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import dev.foltz.pojo.LoginObject;
 import dev.slice.entities.Account;
 import dev.slice.repositories.AccountRepo;
+import dev.slice.services.AccountService;
 import dev.slice.services.AccountServiceImpl;
 
 @SpringBootTest
@@ -27,6 +29,8 @@ class AccountTest {
 	@Autowired
 	AccountRepo ar;
 	
+	@Autowired
+	AccountService asi;
 	
 // WORKS
 //	@Test
@@ -88,11 +92,14 @@ class AccountTest {
 	@Commit
 	@Order(6)
 	void getAccountByUsername() {
-		AccountServiceImpl asi = new AccountServiceImpl();
-		String username = "tao";
+		
+		String Username = "tao";
 		String password = "password";
-		System.out.println(ar.findByUsername(username));
-		System.out.println(asi.getAccountByUsername(username, password));
+		LoginObject account = new LoginObject();
+		account.setUsername(Username);
+		account.setPassword(password);
+		System.out.println(ar.findByUsername(account.getUsername()));
+		System.out.println(asi.getAccountByUsername(account.getUsername(), account.getPassword()));
 	}
 
 

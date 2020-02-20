@@ -1,18 +1,11 @@
 package dev.slice.entities;
 
-import java.util.HashSet;
 
-
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,7 +18,7 @@ public class Account {
 	private int aid;
 	
 	@Column(name ="username")
-	private String Username;
+	private String username;
 	
 	@Column(name ="password")
 	private String password;
@@ -52,7 +45,7 @@ public class Account {
 	public Account(int aid, String username, String password, String email, String fname, String lname, int isManager) {
 		super();
 		this.aid = aid;
-		this.Username = username;
+		this.username = username;
 		this.password = password;
 		this.email = email;
 		this.fname = fname;
@@ -72,12 +65,12 @@ public class Account {
 
 
 	public String getUsername() {
-		return Username;
+		return username;
 	}
 
 
 	public void setUsername(String username) {
-		this.Username = username;
+		this.username = username;
 	}
 
 
@@ -143,7 +136,7 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [aid=" + aid + ", Username=" + Username + ", password=" + password + ", email=" + email
+		return "Account [aid=" + aid + ", username=" + username + ", password=" + password + ", email=" + email
 				+ ", fname=" + fname + ", lname=" + lname + ", isManager=" + isManager +"]";
 	} 
 	
