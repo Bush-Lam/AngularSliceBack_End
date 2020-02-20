@@ -65,7 +65,7 @@ public class AccountController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/account/login", method = RequestMethod.POST)
-	public Account getAccountByUsername(@RequestBody LoginObject account) {
+	public Account getAccountByUsername(@RequestBody Account account) {
 		System.out.println("Account Controller" + account.getUsername() +"-----"+ account.getPassword());
 		return as.getAccountByUsername(account.getUsername(), account.getPassword());
 	}
