@@ -14,7 +14,11 @@ public interface AccountService {
 	
 	public Account getAccountById(int id);
 	
+	public Account getAccountByUsername(String username, String password);
+	
 	public boolean deleteAccount(Account account);
 	
 	public Account updateAccount(Account account);
+	
+	
 }

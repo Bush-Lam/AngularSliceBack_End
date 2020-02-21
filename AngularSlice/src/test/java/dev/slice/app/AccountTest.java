@@ -15,8 +15,10 @@ import org.springframework.test.annotation.Commit;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import dev.foltz.pojo.LoginObject;
 import dev.slice.entities.Account;
 import dev.slice.repositories.AccountRepo;
+import dev.slice.services.AccountService;
 import dev.slice.services.AccountServiceImpl;
 
 @SpringBootTest
@@ -26,6 +28,10 @@ class AccountTest {
 
 	@Autowired
 	AccountRepo ar;
+	
+	@Autowired
+	AccountService asi;
+	
 // WORKS
 //	@Test
 //	@Commit
@@ -73,7 +79,7 @@ class AccountTest {
 //	@Commit
 //	@Order(4)
 //	void deleteAccount() {
-//		ar.deleteById(9);
+//		ar.deleteById(10);
 //	}
 //	WORKS
 //	@Test
@@ -82,6 +88,19 @@ class AccountTest {
 //	void getAccountById() {
 //		System.out.println(ar.findById(6));
 //	}
+	@Test
+	@Commit
+	@Order(6)
+	void getAccountByUsername() {
+		
+		String username = "test2";
+		String password = "pass2";
+		LoginObject account = new LoginObject();
+		account.setUsername(username);
+		account.setPassword(password);
+		System.out.println("Find By Username" + ar.findByUsername(account.getUsername()));
+		System.out.println("Get Account By Username" + asi.getAccountByUsername(account.getUsername(), account.getPassword()));
+	}
 
 
 }

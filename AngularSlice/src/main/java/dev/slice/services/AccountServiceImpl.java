@@ -55,6 +55,20 @@ public class AccountServiceImpl implements AccountService{
 	}
 
 	@Override
+	public Account getAccountByUsername(String username, String password) {
+		Account account = ar.findByUsername(username);
+		if(account == null) {
+			return null;
+		}
+		System.out.println("Service Impl Password " + account.getPassword());
+		System.out.println("Passed in Password" + password);
+		if(account.getPassword().equals(password)){
+			return account;
+		}else{
+			return null;
+		}
+	}
+
 	public List<Bill> getAllBillsByAccountId(int id) {
 		
 		List<Bill> bills = new ArrayList<Bill>((Collection<? extends Bill>) br.findAll());
@@ -66,6 +80,7 @@ public class AccountServiceImpl implements AccountService{
 			}
 		}
 		return billsbyaccount;
+
 	}
 
 }

@@ -1,11 +1,12 @@
 package dev.slice.repositories;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import dev.slice.entities.Account;
 
-
+@Component
 @Repository
 public interface AccountRepo extends CrudRepository<Account, Integer> {
 	
@@ -21,4 +22,5 @@ public interface AccountRepo extends CrudRepository<Account, Integer> {
 ////	
 ////	// delete
 //	boolean deleteAccount(Account account);
+	Account findByUsername(String username);
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import dev.foltz.pojo.LoginObject;
 import dev.slice.entities.Account;
 import dev.slice.entities.Bill;
 import dev.slice.services.AccountService;
@@ -60,5 +61,12 @@ public class AccountController {
 	@RequestMapping(value = "/account", method = RequestMethod.PUT)
 	public Account updateAccount(@RequestBody Account account) {
 		return as.updateAccount(account);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/account/login", method = RequestMethod.POST)
+	public Account getAccountByUsername(@RequestBody Account account) {
+		System.out.println("Account Controller" + account.getUsername() +"-----"+ account.getPassword());
+		return as.getAccountByUsername(account.getUsername(), account.getPassword());
 	}
 }
