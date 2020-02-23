@@ -59,9 +59,12 @@ public class AccountServiceImpl implements AccountService{
 		Account account = ar.findByUsername(username);
 		if(account == null) {
 			return null;
-		}else if(account.getPassword() == password){			
+		}
+		System.out.println("Service Impl Password " + account.getPassword());
+		System.out.println("Passed in Password" + password);
+		if(account.getPassword().equals(password)){
 			return account;
-		}else {
+		}else{
 			return null;
 		}
 	}
