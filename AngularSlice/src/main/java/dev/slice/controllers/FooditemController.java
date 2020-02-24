@@ -19,7 +19,7 @@ import dev.slice.services.FooditemService;
 
 @Component
 @Controller
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class FooditemController {
 
 	@Autowired
