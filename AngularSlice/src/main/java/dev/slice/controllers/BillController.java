@@ -17,7 +17,7 @@ import dev.slice.services.BillService;
 
 @Component
 @Controller
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class BillController {
 	
 	@Autowired
