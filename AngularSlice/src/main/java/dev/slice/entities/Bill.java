@@ -29,7 +29,7 @@ public class Bill {
 	private Account account;
 	
 	@Column(name = "total")
-	private int total;
+	private double total;
 	
 	@Column(name= "orderDate")
 	private String orderDate;
@@ -72,12 +72,12 @@ public class Bill {
 	}
 
 
-	public int getTotal() {
+	public double getTotal() {
 		return total;
 	}
 
 
-	public void setTotal(int total) {
+	public void setTotal(double total) {
 		this.total = total;
 	}
 

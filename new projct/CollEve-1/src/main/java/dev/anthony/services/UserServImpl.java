@@ -38,7 +38,7 @@ public class UserServImpl implements UserServices{
 		List<Event> ev= new ArrayList<Event>((Collection<? extends Event>)er.findAll());
 		List<Event> event = new ArrayList<Event>();
 		for(int i=0; i < ev.size(); i++) {
-			if(ev.get(i).getU_id()==id) {
+			if(ev.get(i).getUser().getU_id()==id) {
 				event.add(ev.get(i));
 			}
 		}

@@ -21,7 +21,7 @@ import dev.slice.services.AccountService;
 
 @Component
 @Controller
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class AccountController {
 
 	@Autowired
@@ -30,7 +30,13 @@ public class AccountController {
 	@ResponseBody
 	@RequestMapping(value = "/account", method = RequestMethod.POST)
 	public Account createAccount(@RequestBody Account account) {
-		return as.createAccount(account);
+		Account temp = as.getAccountByUsername(account.getUsername(), account.getPassword());
+		if(temp == null) {
+			return as.createAccount(account);
+		}else {
+			return null;
+		}
+		
 	}
 	
 	@ResponseBody

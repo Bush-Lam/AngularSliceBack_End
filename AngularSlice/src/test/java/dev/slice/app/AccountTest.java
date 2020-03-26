@@ -32,6 +32,8 @@ class AccountTest {
 	@Autowired
 	AccountService asi;
 	
+
+	
 // WORKS
 //	@Test
 //	@Commit
@@ -86,20 +88,39 @@ class AccountTest {
 //	@Commit
 //	@Order(5)
 //	void getAccountById() {
-//		System.out.println(ar.findById(6));
+//		System.out.println(ar.findById(5000));
 //	}
+//	@Test
+//	@Commit
+//	@Order(6)
+//	void getAccountByUsername() {
+//		
+//		String username = "test2";
+//		String password = "pass2";
+//		LoginObject account = new LoginObject();
+//		account.setUsername(username);
+//		account.setPassword(password);
+//		System.out.println("Find By Username" + ar.findByUsername(account.getUsername()));
+//		System.out.println("Get Account By Username" + asi.getAccountByUsername(account.getUsername(), account.getPassword()));
+//	}
+	
 	@Test
 	@Commit
-	@Order(6)
-	void getAccountByUsername() {
+	void createAccount() {
+		Account a = new Account();
+		a.setUsername("test2");
+		a.setPassword("pass2");
+		a.setEmail("test2");
+		a.setFname("test2");
+		a.setLname("test2");
+		a.setIsManager(0);
+		Account temp = asi.getAccountByUsername(a.getUsername(), a.getPassword());
+		if(temp == null) {
+			System.out.println(asi.createAccount(a));
+		}else {
+			System.out.println("null");
+		}
 		
-		String username = "test2";
-		String password = "pass2";
-		LoginObject account = new LoginObject();
-		account.setUsername(username);
-		account.setPassword(password);
-		System.out.println("Find By Username" + ar.findByUsername(account.getUsername()));
-		System.out.println("Get Account By Username" + asi.getAccountByUsername(account.getUsername(), account.getPassword()));
 	}
 
 

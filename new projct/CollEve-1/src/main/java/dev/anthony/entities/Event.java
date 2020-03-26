@@ -1,14 +1,18 @@
 package dev.anthony.entities;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Event")
+@Table(name="event")
 public class Event {
 
 	@Id
@@ -16,9 +20,9 @@ public class Event {
 	@Column(name ="e_id")
 	private int e_id;
 	
-//	@ManyToOne(fetch = FetchType.EAGER)
-//	@JoinColumn(name= "u_id")
-	private int u_id;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "u_id")
+	private Users user;
 	
 	@Column(name ="e_name")
 	private String E_name;
@@ -39,10 +43,10 @@ public class Event {
 		super();
 	}
 
-	public Event(int e_id, int u_id, String e_name, String e_location, String e_time, String e_pic, String e_AddInfo) {
+	public Event(int e_id, Users user, String e_name, String e_location, String e_time, String e_pic, String e_AddInfo) {
 		super();
 		this.e_id = e_id;
-		this.u_id = u_id;
+		this.user = user;
 		E_name = e_name;
 		E_location = e_location;
 		E_time = e_time;
@@ -56,14 +60,6 @@ public class Event {
 
 	public void setE_id(int e_id) {
 		this.e_id = e_id;
-	}
-
-	public int getU_id() {
-		return u_id;
-	}
-
-	public void setU_id(int u_id) {
-		this.u_id = u_id;
 	}
 
 	public String getE_name() {
@@ -106,11 +102,13 @@ public class Event {
 		E_AddInfo = e_AddInfo;
 	}
 
-	@Override
-	public String toString() {
-		return "Event [e_id=" + e_id + ", u_id=" + u_id + ", E_name=" + E_name + ", E_location=" + E_location
-				+ ", E_time=" + E_time + ", E_pic=" + E_pic + ", E_AddInfo=" + E_AddInfo + "]";
+	public Users getUser() {
+		return user;
 	}
-	
+
+	public void setUser(Users user) {
+		this.user = user;
+	}
+
 	
 }
