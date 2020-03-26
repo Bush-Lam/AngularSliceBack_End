@@ -5,13 +5,15 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name= "S_User")
+@Table(name="s_user")
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,10 +32,10 @@ public class Users {
     @Column(name="l_name")
 	private String L_name;
 	
-    @Column(name="SchoolEmail")
-	private String School_Email;
+//    @Column(name="SchoolEmail")
+//	private String School_Email;
 	
-   // @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
 	private Set<Event> event = new HashSet<Event>();
 	
 
@@ -50,7 +52,7 @@ public class Users {
 		this.password = password;
 		F_name = f_name;
 		L_name = l_name;
-		School_Email = school_Email;
+//		School_Email = school_Email;
 		this.event = event;
 	}
 
@@ -105,14 +107,14 @@ public class Users {
 	}
 
 
-	public String getSchool_Email() {
-		return School_Email;
-	}
-
-
-	public void setSchool_Email(String school_Email) {
-		School_Email = school_Email;
-	}
+//	public String getSchool_Email() {
+//		return School_Email;
+//	}
+//
+//
+//	public void setSchool_Email(String school_Email) {
+//		School_Email = school_Email;
+//	}
 
 
 	public Set<Event> getEvent() {
@@ -124,10 +126,4 @@ public class Users {
 		this.event = event;
 	}
 
-
-	@Override
-	public String toString() {
-		return "Users [u_id=" + u_id + ", username=" + username + ", password=" + password + ", F_name=" + F_name
-				+ ", L_name=" + L_name + ", School_Email=" + School_Email + ", event=" + event + "]";
-	}
 }
